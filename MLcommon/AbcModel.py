@@ -1,5 +1,5 @@
 """
-Abstract class for Macnihe Learning models
+Abstract class for Machine Learning models
 Explicit model protocol
  
 JCA
@@ -8,12 +8,12 @@ Vaico
 import pickle
 import reprlib
 import logging
-import os
 from abc import ABC, abstractmethod
 
 from MLcommon.exceptions import ConfigParamError
 
 log = logging.getLogger(__name__)
+
 
 class AbcModel(ABC):
     """Abstract class for classification and detection Architecture Models"""
