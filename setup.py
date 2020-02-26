@@ -8,7 +8,7 @@ setup(
   author = 'Juan Carlos Arbeláez',
   author_email = 'juanarbelaez@vaico.com.co',
   url = 'https://jarbest@bitbucket.org/jarbest/mlcommon.git',
-  download_url = 'https://bitbucket.org/jarbest/mlcommon/get/7386e6cb8522.zip',
+  download_url = 'https://bitbucket.org/jarbest/mlcommon/get/v01.tar.gz',
   keywords = ['VAICO', 'COMMON', 'ML'],
   install_requires=[],
   classifiers=[
