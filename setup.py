@@ -5,7 +5,7 @@ setup(
   version = '0.1.1',
   license= '',
   description = 'Common interface for Machine Learning models with explicit model protocol',
-  author = 'Juan Carlos Arbeláez',
+  author = 'Juan Carlos Arbelaez',
   author_email = 'juanarbelaez@vaico.com.co',
   url = 'https://jarbest@bitbucket.org/jarbest/mlcommon.git',
   download_url = 'https://bitbucket.org/jarbest/mlcommon/get/master.tar.gz',
