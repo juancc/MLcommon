@@ -16,7 +16,7 @@ Repo
 
 ## AbcModel methods
 
-Implement required methods and set a dict of the default model parameters (INtended for the user to modify the model behaviour) in a variable **_defaults**. 
+Implement required methods and set a dict of the default model parameters (Intended for the user to modify the model behaviour) in a variable **_defaults**. 
 
 All the keywords parameters are loaded as instance variables and also stored in _defaults variable
 
@@ -31,6 +31,9 @@ class NewModel(AbcModel):
     }               
   
 ```
+
+# Zip architectures
+For share a new architecture compress it in zip format under the folder python for AWS lambda compatibility. Install the requirements of each architecture
 
 ## License
 All rights of this library belongs to Vaico Visión Artificial and no one may distribute, reproduce, or create derivative works.
