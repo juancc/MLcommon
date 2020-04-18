@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'MLcommon',
   packages = ['MLcommon'],
-  version = '0.1.2',
+  version = '0.1.3',
   license= '',
   description = 'Common interface for Machine Learning models with explicit model protocol',
   author = 'Juan Carlos Arbelaez',
