@@ -29,7 +29,8 @@ def load_zip_model(model_path, zip_path):
     sys_path.append(join('/misdoc/vaico/architectures/yolo3/zip/yolo3.zip', 'python'))
 
     importer = zipimport.zipimporter(zip_path)
-    model_module = importer.load_module('python/{0}/{0}'.format(arch_name.lower()))
+    #'python/{0}/{0}'.format(arch_name.lower())
+    model_module = importer.load_module(join('python', arch_name.lower(), arch_name.lower()))
 
     # Search architecture class name in module
     for attr in dir(model_module):
