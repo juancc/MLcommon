@@ -100,6 +100,11 @@ class AbcModel(ABC):
         config = self.get_config()
         full_model['conf'] = config
 
+        # Change weights=='imagenet' to avoid download and reload from weights
+        if 'weights' in full_model['conf']:
+            if full_model['conf']['weights'] == 'imagenet':
+                full_model['conf']['weights'] = None
+
         # Save model and metadata
         with open(filename, 'wb') as handle:
             pickle.dump(full_model, handle, protocol=pickle.HIGHEST_PROTOCOL)
