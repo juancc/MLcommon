@@ -34,15 +34,28 @@ class NewModel(AbcModel):
 
 # Zip architectures
 For share a new architecture compress it in zip format under the folder python for AWS lambda compatibility. Install the requirements of each architecture
+## Models
+Each model is loaded from two files:
+- zip_path: path to architecture file (.zip)
+- model_path: path to model file (.ml)
 
-
+### Loading models example for Cascade
+Loading models example for generating a Cascade configuration:
+```python
+conf['main_model']['model'] = load_zip_model(
+    conf['main_model']['model_path'],
+    conf['main_model']['zip_path'])
+for roi, models in conf['sub_models'].items():
+    for model_conf in models:
+        model_conf['model'] = load_zip_model(model_conf['model_path'], model_conf['zip_path'])
+```
 # Prediction strategies:
 ## Cascade
 Class for combine multiple prediction models based on the output of a main detector model.
 The regions output of the detector are passed on other nodes (Classification or detection)
 based some rules.
 
-### Cascade Prediction Node
+### Cascade Prediction Strartegy
  - Get predictions from a main detector
  - Results are passed to specialized classifiers/detector
 
@@ -58,9 +71,7 @@ Inputs are:
 conf: {
     'max_concur_req': 10,
     'main_model':{
-        'model_path': '/path/to/main/mode.ml',
-        'zip_path': '/path/to/architecture.zip'
-
+        'model':AbcModel,
     }
      'sub_models':
         {
@@ -68,8 +79,7 @@ conf: {
 
                 [
                     {
-                        'model_path': '/path/to/sub_mode.ml',
-                        'zip_path': '/path/to/architecture.zip',
+                        'model': AbcModel,
                         'weights': (0,0,1,1),
                         'conditions':['square_h']
 
@@ -81,11 +91,16 @@ conf: {
 ```
 Use *all* for pass all the subregions in a classifier
 
+## Multi
+General model that load a models configuration 
+Run multiple models that are independednt one for another
 
-#### Models
-Each model is loaded from two files:
-- zip_path: path to architecture file (.zip)
-- model_path: path to model file (.ml)
+Example of node configuration
+```python
+conf={
+    'models': [AbcModel1, AbcModel2, Cascade,...],
+}
+```
 
 #### Roi
 The roi inside the located class by the detector is defined by weights

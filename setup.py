@@ -1,8 +1,8 @@
 from distutils.core import setup
 setup(
   name = 'MLcommon',
-  packages = ['MLcommon'],
-  version = '0.1.4',
+  packages = ['MLcommon', 'MLcommon.PredictionStrategies'],
+  version = '0.1.5',
   license= '',
   description = 'Common interface for Machine Learning models with explicit model protocol',
   author = 'Juan Carlos Arbelaez',
