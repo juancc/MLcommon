@@ -1,0 +1,5 @@
+.idea
+dist
+MANIFEST
+test.py
+setup.cfg

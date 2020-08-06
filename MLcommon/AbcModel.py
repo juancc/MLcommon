@@ -112,13 +112,13 @@ class AbcModel(ABC):
         log.info('Model Saved!')
 
     @classmethod
-    def load(cls, filepath):
+    def load(cls, filepath, *args, **kwargs):
         """Decode file and create a model with the data and configuration"""
         log.info('Loading model from: {}'.format(filepath))
 
         with open(filepath, 'rb') as handle:
             model_data = pickle.load(handle)
-        model = cls(conf=model_data['conf'])
+        model = cls(conf=model_data['conf'], *args, **kwargs)
         model.set_weights(model_data['weights'])
 
         return model
