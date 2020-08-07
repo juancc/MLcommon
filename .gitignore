@@ -3,3 +3,5 @@ dist
 MANIFEST
 test.py
 setup.cfg
+*.pyc
+MLcommon/__pycache__/
